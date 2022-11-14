@@ -9,8 +9,6 @@ export async function listProducts (req, res) {
 export async function seachProducts (req, res) {
   console.log("query", req.query)
   const params = req.query
-  const product = await ProductsService.findProduct(params.name)
-  return res.json({
-    product
-  })
+  const products = await ProductsService.findProduct(params.name)
+  return res.json( products)
 }
